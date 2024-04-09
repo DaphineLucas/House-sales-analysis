@@ -2,24 +2,26 @@
 The selling price of a home is a critical factor in the real estate market, as it directly influences the financial outcome for both buyers and sellers. For homeowners, the selling price represents the return on their investment and can significantly impact their financial well-being. Potential buyers, on the other hand, rely on the selling price to make informed decisions about purchasing a property within their budget and assessing its value relative to similar properties in the market.
 House price is influenced by a multitude of factors, which can be broadly categorized into three main categories: property-specific factors, market factors, and external factors. Property-specific factors encompass attributes such as location, size, condition, amenities, architectural style, and age of the property. Market factors include supply and demand dynamics, interest rates, mortgage availability, and prevailing economic conditions. External factors can range from neighborhood characteristics, such as school quality and crime rates, to broader influences like government policies, infrastructure development, and demographic trends.
 Understanding the factors that influence the selling price of residential properties is of paramount importance to various stakeholders involved in the real estate industry. Real estate agents need this knowledge to provide accurate pricing recommendations and effective marketing strategies for their clients. Homeowners can benefit from understanding these factors to make informed decisions when pricing their properties. Investors and developers can leverage this knowledge to identify promising investment opportunities and maximize their returns. 
+
 ## Problem Statement
 Real estate market is highly volatile, influenced by economic conditions, housing demand, and external factors. As such setting inappropriate prices and making uninformed decisions of when to sell a house can be counterproductive.  Research is essential to understand market trends and identify the best time to sell a home for maximizing its selling price. Analyzing property characteristics such as location, size, amenities, condition, and recent market trends through research aids in setting an appropriate selling price. By understanding how different home characteristics impact selling prices, the agency can help home owners mitigate the risk of setting inappropriate prices or making poor investment decisions.  
-###Objectives
+
+### Objectives
 1. To understand factors that affect price of a house
 2. To develop a model that can predict housing price based on various features. 
 3. To make recommendations on how home owners can optimize selling price of a house
-
-
-
  ## Modelling 
-Baseline model is with variable with the highest correlation with price which was sqft_living
+The Baseline model consists of 2 simple linear regression models demonstarting the relationship between price and two highly correlating variables
+
  ## Model evaluation approach 
-Adjusted R-squared to show variation explained
-Durbin-Watson test to detect autocorrelation in residuals, ensuring the validity of regression analysis. 
-Durbin-Watson test value between 1.5 and 2.5 indicates no significant autocorrelation 
+R-squared indicates the proportion of variance in the dependent variable (price) explained by the independent variables included
+The Durbin-Watson statistic tests for autocorrelation in the residuals, with values close to 2 indicating no autocorrelation.
+
 ##  Model comparison approach 
-Adjusted R-squared to show variation explained. Higher Adjusted R-squared indicates better model
-AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion) to compare goodness-of-fit and complexity of the models. Lower AIC and BIC values indicate a better model 
+Root Mean Squared Error (RMSE): This is the square root of the MSE, which gives a measure of the average magnitude of the errors in the predicted values.
+Mean Squared Error (MSE): The MSE measures the average squared difference between the actual and predicted values.
+A lower MSE indicates better model performance, with a value of 0 indicating a perfect fit. 
+
 ## Baseline model interpretation
 With an F-statistic p-value below 0.05, the overall model is statistically significant.The results show that sqft_living explains 41.8% variation in price of houses.The model coefficients (const and sqft_living) are both statistically significant, with t-statistic p-values below 0.05.For 0 sqft_living, the estimated price is estimated to be -43490. An increase of 1 square foot in the living area leads to a price increase of approximately $283.4564.
  for the bathroom model, the F-statistic p-value below 0.05, the overall model is statistically significant.The results show that bathrooms explains 29% variation in price of houses.The model coefficients (const and sqft_living) are both statistically significant, with t-statistic p-values below 0.05.For 0 sqft_living, the estimated price is estimated to be 12.2218. An increase of 1 square foot in the living area leads to a price increase of approximately $0.3935.
